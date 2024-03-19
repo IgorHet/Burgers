@@ -14,7 +14,6 @@ public class Burger {
         this.cheese = "чеддер";
         this.greens = "салат, помідори";
         this.mayo = "майонез";
-        printIngredients();
     }
 
     // Конструктор для дієтичного бургера (без майонезу)
@@ -33,7 +32,6 @@ public class Burger {
         } else {
             this.mayo = "майонез";
         }
-        printIngredients();
     }
 
     // Конструктор для бургера з подвійним м'ясом
@@ -44,18 +42,17 @@ public class Burger {
         this.cheese = "гауда";
         this.greens = "руккола, цибуля";
         this.mayo = "майонез";
-        printIngredients();
     }
 
-    // Метод для виведення складу бургера
-    private void printIngredients() {
-        System.out.println("Бургер: " + name);
-        System.out.println("Склад:");
-        System.out.println("Булочка: " + bun);
-        System.out.println("М'ясо: " + meat);
-        System.out.println("Сир: " + cheese);
-        System.out.println("Зелень: " + greens);
-        System.out.println("Майонез: " + mayo);
-        System.out.println();
+    // Перевизначений метод toString() для виведення інформації про бургер
+    @Override
+    public String toString() {
+        return "Бургер: " + name + "\n" +
+                "Склад:\n" +
+                "Булочка: " + bun + "\n" +
+                "М'ясо: " + meat + "\n" +
+                "Сир: " + cheese + "\n" +
+                "Зелень: " + greens + "\n" +
+                "Майонез: " + mayo + "\n";
     }
 }
