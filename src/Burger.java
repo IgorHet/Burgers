@@ -7,41 +7,23 @@ public class Burger {
     private String mayo;
 
     // Конструктор для звичайного бургера
-    public Burger() {
-        this.name = "Звичайний бургер";
-        this.bun = "пшенична булочка";
-        this.meat = "яловичина";
-        this.cheese = "чеддер";
-        this.greens = "салат, помідори";
-        this.mayo = "майонез";
+    public Burger(String name, String bun, String meat, String cheese, String greens, String mayo) {
+        this.name = name;
+        this.bun = bun;
+        this.meat = meat;
+        this.cheese = cheese;
+        this.greens = greens;
+        this.mayo = mayo;
     }
 
     // Конструктор для дієтичного бургера (без майонезу)
-    public Burger(boolean isDiet) {
-        if (isDiet) {
-            this.name = "Дієтичний бургер";
-        } else {
-            this.name = "Дієтичний бургер з майонезом";
-        }
-        this.bun = "бездріжджова булочка";
-        this.meat = "курятина";
-        this.cheese = "сир з низьким вмістом жиру";
-        this.greens = "листя салату, огірки";
-        if (isDiet) {
-            this.mayo = "без майонезу";
-        } else {
-            this.mayo = "майонез";
-        }
+    public Burger(String name, String bun, String meat, String cheese, String greens) {
+        this(name, bun, meat, cheese, greens, "без майонезу");
     }
 
     // Конструктор для бургера з подвійним м'ясом
-    public Burger(String doubleMeat) {
-        this.name = "Бургер з подвійним м'ясом";
-        this.bun = "житнє булочка з насінням";
-        this.meat = "дві шари яловичини";
-        this.cheese = "гауда";
-        this.greens = "руккола, цибуля";
-        this.mayo = "майонез";
+    public Burger(String name, String bun, String meat, String cheese, String greens, boolean doubleMeat) {
+        this(name, bun, doubleMeat ? "дві шари " + meat : meat, cheese, greens);
     }
 
     // Перевизначений метод toString() для виведення інформації про бургер
